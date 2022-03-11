@@ -1,0 +1,42 @@
+@import "/node_modules/@blueprintjs/core/lib/scss/variables";
+
+body {
+    --border-color: #{$pt-divider-black};
+}
+
+body.bp4-dark {
+    --border-color: #{$pt-dark-divider-white};
+}
+
+pre.pre-code-block {
+    padding: 0;
+    overflow: none;
+    position: relative;
+}
+
+pre:hover span.copy-btn-container {
+    opacity: 0.6;
+}
+
+span.copy-btn-container {
+    transition-duration: 0.4s;
+    transition-property: opacity;
+    opacity: 0;
+    margin: 0;
+    padding: 2px;
+    position: absolute;
+    // transform: translateX(-100%);
+    top: 0;
+    right: 0;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: $pt-border-radius;
+}
+
+span.copy-btn-container button.bp4-button:active {
+    background-color: $pt-intent-primary;
+}
+
+span.copy-btn-container button.bp4-button:active span {
+    color: white;
+}

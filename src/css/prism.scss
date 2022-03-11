@@ -1,0 +1,205 @@
+@import "/node_modules/@blueprintjs/core/lib/scss/variables";
+
+body {
+  --bg: #ffffffaa;
+  --bg2: #e0e0e0;
+  --fg: #4d4d4c;
+  --comment: #8e908c;
+  --base01: #e0e0e0;
+  --base02: #d6d6d6;
+  --r: #c82829;
+  --o: #f5871f;
+  --y: #eab700;
+  --g: #718c00;
+  --b: #3e999f;
+  --i: #4271ae;
+  --v: #8959a8;
+}
+
+body.bp4-dark {
+  --bg: #1d1f2188;
+  --bg2: #373b41;
+  --fg: #c5c8c6;
+  --base01: #282a2e;
+  --base02: #373b41;
+  --comment: #969896;
+  --r: #cc6666;
+  --o: #de935f;
+  --y: #f0c674;
+  --g: #b5bd68;
+  --b: #8abeb7;
+  --i: #81a2be;
+  --v: #b294bb;
+}
+
+/*
+
+Name:       Base16 Tomorrow Dark
+Author:     Chris Kempson (http://chriskempson.com)
+
+Prism template by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
+Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+With heavy edits and support for Blueprint by Nicholas Miklaucic
+
+*/
+
+pre > code.code-highlight,
+pre[class*="language-"] {
+  display: block;
+  background: var(--bg);
+  color: var(--fg) !important;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  white-space: pre;
+  word-spacing: normal;
+  hyphens: none;
+  text-align: left;
+  direction: ltr;
+  tab-size: 4;
+  margin: 0.5rem;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: var(--bg2);
+  color: var(--fg) !important;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: var(--bg2);
+  color: var(--fg) !important;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: $pt-border-radius;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--comment);
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: var(--fg);
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.operator {
+  color: var(--b);
+}
+
+.token.boolean,
+.token.number {
+  color: var(--o);
+}
+
+.token.class-name,
+.token.property {
+  color: var(--y);
+}
+
+.token.function,
+.token.tag {
+  color: var(--i);
+}
+
+.token.string {
+  color: var(--g);
+}
+
+.token.selector {
+  color: var(--v);
+}
+
+.token.attr-name {
+  color: var(--o);
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--g);
+}
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: var(--v);
+}
+
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: var(--b);
+}
+
+.token.placeholder,
+.token.variable {
+  color: var(--b);
+}
+
+.token.deleted {
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  border-bottom: 1px dotted #ffffff;
+  text-decoration: none;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.important {
+  color: var(--r);
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre > code.highlight {
+  outline: 0.4em solid var(--r);
+  outline-offset: .4em;
+}
+
+.line-numbers .line-numbers-rows {
+  border-right-color: var(--base01) !important;
+}
+
+.line-numbers-rows > span:before {
+  color: var(--base02) !important;
+}
+
+.line-highlight {
+  background: rgba(255, 255, 255, 0.2) !important;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0)) !important;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0)) !important;
+}

@@ -1,0 +1,190 @@
+@import "/node_modules/@blueprintjs/core/lib/scss/variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    --border-color: #{$pt-dark-divider-white};
+    --bg-color: #{$pt-app-background-color};
+    --fg-color: #{$pt-text-color};
+    --light-fg: #{$pt-text-color-disabled};
+    --main-font-family: "Myriad Pro", serif;
+
+    --violet: #D69FD6;
+    --indigo: #BDADFF;
+}
+
+body.bp4-dark {
+    --border-color: #{$pt-divider-black};
+    --bg-color: #{$pt-dark-app-background-color};
+    --fg-color: #{$pt-dark-text-color};
+    --light-fg: #{$pt-dark-text-color-disabled};
+
+    --violet: #5C255C;
+    --indigo: #5642A6;
+}
+
+body {
+    background-color: var(--bg-color);
+    padding-top: $pt-navbar-height;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--main-font-family);
+    color-scheme: light;
+}
+
+
+body.bp4-dark {
+    background-color: var(--bg-color);
+    color-scheme: dark;
+}
+
+#sunmoon-grp {
+    border: 3px solid var(--fg-color);
+    border-radius: $pt-border-radius;
+}
+
+#sun-btn {
+    border-right: 3px solid var(--fg-color);
+    border-radius: $pt-border-radius;
+}
+
+#sun-btn, moon-btn {
+    background-color: transparent;
+}
+
+#sun-btn svg {
+    color: white;
+}
+
+#moon-btn svg {
+    color: #404854
+}
+
+#app {
+    height: 100%;
+}
+
+#content {
+    padding: 2rem;
+    height: 100%;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-right-color: var(--border-color);
+}
+
+.tab-content-container {
+    background: var(--violet);
+    background: linear-gradient(90deg, var(--violet) 0%, var(--indigo) 200%);
+
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+}
+
+.panel-tabs {
+    height: 100%;
+}
+
+.panel-tabs .bp4-tab-list {
+    margin: 0;
+}
+
+.panel-tabs .bp4-tab-panel {
+    height: calc(100% - 40px);
+    margin-top: 0;
+}
+
+#img {
+    display: flex;
+    justify-content: center;
+}
+
+#img embed {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: $pt-border-radius;
+}
+
+#code-tab-container {
+    height: 100%;
+}
+
+#code-tab-container > .spaces-space-inner {
+    height: 100%;
+}
+
+#code-tab-content {
+    height: 100%;
+    padding: 2rem;
+}
+
+// https://unifiedjs.com/explore/package/rehype-prism-plus/
+// with some custom edits so the copy button works correctly
+
+pre.pre-code-block {
+    // for some reason this isn't set correctly in Firefox: maybe it doesn't see the background color?
+    // luckily, this is a property that Firefox supports, even if no one else does
+    scrollbar-color: var(--light-fg) var(--bg-color);
+    // only take up as much space as given, scroll for the rest
+    overflow: none;
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+}
+
+/**
+ * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .code-highlight.
+ */
+pre > code.code-highlight {
+  // float: left; /* 1 */
+    // min-width: 100%; /* 2 */
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 1rem;
+}
+.code-line {
+    float: left;
+    clear: left;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  // margin-right: -16px;
+  border-left-width: 4px;
+  border-left-color: rgba(31, 41, 55, 0); /* Set code block color */
+}
+
+.code-line.inserted {
+  background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
+}
+
+.code-line.deleted {
+  background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
+}
+
+.highlight-line {
+  margin-left: -16px;
+  margin-right: -16px;
+  background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+  border-left-width: 4px;
+  border-left-color: rgb(59, 130, 246); /* Set highlight accent border color */
+}
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  // setting this makes tens digits invisible
+  //  margin-left: -8px;
+  color: rgb(156, 163, 175); /* Line number color */
+  content: attr(line);
+}

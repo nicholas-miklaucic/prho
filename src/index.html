@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Rho</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet" />
+        <link href="/node_modules/@blueprintjs/core/lib/css/blueprint.css" rel="stylesheet" />
+        <link href="/node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css" rel="stylesheet" />
+        <link href="/node_modules/@blueprintjs/popover2/lib/css/blueprint-popover2.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/prism.scss">
+        <link rel="stylesheet" href="css/index.scss">
+        <link rel="stylesheet" href="css/copyBlocks.scss">
+        <link rel="stylesheet" href="css/footnotes.scss">
+        <div id="menu">
+        </div>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+            your experience.
+            </p>
+        <![endif]-->
+        <div id="app"></div>
+        <script type="module" src="index.tsx"></script>
+        <script type="module" src="copyBlocks.tsx"></script>
+        <script type="module" src="footnotes.tsx"></script>
+        <script type="module" src="footnotesCollapse.tsx"></script>
+        <script type="text/javascript">
+         window.onload = function() {
+             document.getElementById('img').innerHTML = `<embed src="http://localhost:4569">`
+         };
+        </script>
+    </body>
+</html>

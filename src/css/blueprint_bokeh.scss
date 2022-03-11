@@ -1,0 +1,92 @@
+@import "/node_modules/@blueprintjs/core/lib/scss/variables";
+
+body {
+  --main-font-family: "Myriad Pro", serif;
+    --main-bg-color: $pt-app-background-conlor;
+    --main-secondary-bg: $pt-app-background-color;
+    --main-text-color: $pt-text-color;
+}
+
+body.bp4-dark {
+    --main-bg-color: $pt-dark-app-background-color;
+    --main-secondary-bg: $pt-dark-app-background-color;
+    --main-text-color: $pt-dark-text-color;
+}
+
+.bk-root {
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+}
+
+.bk.card, .bk.accordion {
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+
+.bk.card-header, .bk.accordion-header {
+  color: var(--main-text-color);
+  background-color: #292929 !important;
+  background-color: var(--main-bg-color) !important;
+}
+
+/* DataFrame Widget */
+.bk-root .slick-header-columns {
+  color: var(--main-text-color);
+  font-weight: bold;
+  background: none;
+}
+
+.bk-root .slick-header-column:hover {
+    background: var(--main-bg-color);
+}
+
+.bk-root .slick-row.even {
+  background: none;
+}
+
+.bk-root .slick-row.odd {
+    background: var(--main-bg-color);
+}
+
+.bk-root .slick-cell.selected {
+    background: var(--main-secondary-bg);
+}
+
+/* DataFrame Pane */
+table.panel-df {
+  color: var(--main-text-color);
+}
+
+.panel-df tbody tr:nth-child(odd) {
+    background: var(--main-bg-color);
+}
+
+.panel-df tr:hover {
+    background: var(--main-secondary-bg) !important;
+    cursor: pointer;
+}
+
+/* Tabs layout */
+.bk-root .bk-tabs-header .bk-tab {
+  color: var(--main-text-color);
+  background: var(--main-bg-color);
+  border: none;
+}
+
+.bk-root .bk-tabs-header .bk-tab:hover {
+  color: var(--main-text-color);
+  background: var(--main-bg-color);
+}
+
+.bk-root .bk-tabs-header .bk-tab.bk-active {
+  color: var(--main-text-color);
+  background: var(--main-bg-color);
+  border: none;
+}
+
+.bk.pn-loading:before {
+  background-color: inherit;
+  border-color: inherit;
+}
